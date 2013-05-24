@@ -17,7 +17,7 @@ Usage
 	)
 
 	func main() {
-		date := Format("DD.MM.YYYY", time.Now())
+		date := fmtdate.Format("DD.MM.YYYY", time.Now())
 		fmt.Println(date)
 	}
 

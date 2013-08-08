@@ -3,7 +3,7 @@ fmtdate
 
 [![Build Status](https://secure.travis-ci.org/metakeule/fmtdate.png)](http://travis-ci.org/metakeule/fmtdate)
 
-a simple go date formatter, based on conventions of Microsoft Excel (TM)
+a simple go date formatter and parser, based on conventions of Microsoft Excel (TM)
 
 Usage
 -----

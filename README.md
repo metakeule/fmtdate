@@ -19,6 +19,10 @@ Usage
 	func main() {
 		date := fmtdate.Format("DD.MM.YYYY", time.Now())
 		fmt.Println(date)
+
+		var err
+		date, err = fmtdate.Parse("M/D/YY", "2/3/07")
+		fmt.Println(date, err)
 	}
 
 ```

@@ -6,7 +6,7 @@ import (
 )
 
 /*
-	Formats a date based on ms excel (TM) conventions:
+	Formats a date based on Microsoft Excel (TM) conventions:
 	hh   - hours
 	mm   - minutes
 	ss   - seconds
@@ -21,12 +21,20 @@ import (
 	YY   - year (06)
 	YYYY - year (2006)
 */
-func Format(format string, date time.Time) string {
-	s := format
+func replace(in string) (out string) {
+	out = in
 	for _, ph := range Placeholder {
-		s = strings.Replace(s, ph.find, ph.subst, -1)
+		out = strings.Replace(out, ph.find, ph.subst, -1)
 	}
-	return date.Format(s)
+	return
+}
+
+func Format(format string, date time.Time) string {
+	return date.Format(replace(format))
+}
+
+func Parse(format string, value string) (time.Time, error) {
+	return time.Parse(replace(format), value)
 }
 
 type p struct{ find, subst string }

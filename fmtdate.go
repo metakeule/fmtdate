@@ -6,7 +6,8 @@ import (
 )
 
 /*
-	Formats a date based on Microsoft Excel (TM) conventions:
+	Formats:
+
 	hh   - hours
 	mm   - minutes
 	ss   - seconds
@@ -21,6 +22,7 @@ import (
 	YY   - year (06)
 	YYYY - year (2006)
 */
+
 func replace(in string) (out string) {
 	out = in
 	for _, ph := range Placeholder {
@@ -29,10 +31,12 @@ func replace(in string) (out string) {
 	return
 }
 
+// Formats a date based on Microsoft Excel (TM) conventions
 func Format(format string, date time.Time) string {
 	return date.Format(replace(format))
 }
 
+// Parses a value to a date based on Microsoft Excel (TM) formats
 func Parse(format string, value string) (time.Time, error) {
 	return time.Parse(replace(format), value)
 }

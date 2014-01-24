@@ -1,6 +1,7 @@
 package fmtdate
 
 import (
+
 	// "fmt"
 	"testing"
 	"time"
@@ -80,4 +81,25 @@ func TestTime(t *testing.T) {
 	if res != "06" {
 		t.Errorf("ss should return 06, but returns %#v\n", res)
 	}
+}
+
+func TestDefaults(t *testing.T) {
+	now := time.Now()
+
+	tester := func(formatter func(time.Time) string, parser func(string) (time.Time, error)) {
+		formatted := formatter(now)
+		timed, err := parser(formatted)
+
+		if err != nil {
+			t.Errorf("error while parsing %#v: %s", formatted, err.Error())
+		}
+
+		if formatter(timed) != formatted {
+			t.Errorf("time not correctly retransformatted, was: %#v, is: %#v", formatted, formatter(timed))
+		}
+	}
+
+	tester(FormatDate, ParseDate)
+	tester(FormatTime, ParseTime)
+	tester(FormatDateTime, ParseDateTime)
 }

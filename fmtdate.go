@@ -31,12 +31,12 @@ func replace(in string) (out string) {
 	return
 }
 
-// Formats a date based on Microsoft Excel (TM) conventions
+// Format formats a date based on Microsoft Excel (TM) conventions
 func Format(format string, date time.Time) string {
 	return date.Format(replace(format))
 }
 
-// Parses a value to a date based on Microsoft Excel (TM) formats
+// Parse parses a value to a date based on Microsoft Excel (TM) formats
 func Parse(format string, value string) (time.Time, error) {
 	return time.Parse(replace(format), value)
 }
@@ -57,4 +57,40 @@ var Placeholder = []p{
 	p{"DDD", "Mon"},
 	p{"DD", "02"},
 	p{"D", "2"},
+}
+
+var (
+	DefaultTimeFormat     = "hh:mm:ss"
+	DefaultDateFormat     = "YYYY-MM-DD"
+	DefaultDateTimeFormat = "YYYY-MM-DD hh:mm:ss"
+)
+
+// FormatDate formats the given date to the DefaultDateFormat
+func FormatDate(date time.Time) string {
+	return Format(DefaultDateFormat, date)
+}
+
+// FormatTime formats the given date to the DefaultTimeFormat
+func FormatTime(date time.Time) string {
+	return Format(DefaultTimeFormat, date)
+}
+
+// FormatTime formats the given date to the DefaultDateTimeFormat
+func FormatDateTime(date time.Time) string {
+	return Format(DefaultDateTimeFormat, date)
+}
+
+// Parse parses a date in DefaultDateFormat to a date
+func ParseDate(value string) (time.Time, error) {
+	return Parse(DefaultDateFormat, value)
+}
+
+// Parse parses a date in DefaultTimeFormat to a date
+func ParseTime(value string) (time.Time, error) {
+	return Parse(DefaultTimeFormat, value)
+}
+
+// Parse parses a date in DefaultDateTimeFormat to a date
+func ParseDateTime(value string) (time.Time, error) {
+	return Parse(DefaultDateTimeFormat, value)
 }

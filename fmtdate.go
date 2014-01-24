@@ -1,5 +1,5 @@
 /*
-fmtdate provides a date formatter and parser, based on the time package using the syntax known from Microsoft Excel (TM).
+fmtdate provides a date formatter and parser using the syntax of Microsoft Excel (TM).
 
 Additionally it offers default conversions for date time and datetime.
 

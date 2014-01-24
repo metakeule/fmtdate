@@ -3,7 +3,15 @@ fmtdate
 
 [![Build Status](https://secure.travis-ci.org/metakeule/fmtdate.png)](http://travis-ci.org/metakeule/fmtdate)
 
-a simple go date formatter and parser, based on conventions of Microsoft Excel (TM)
+`fmtdate` provides a date formatter and parser, based on the time package using the syntax known from Microsoft Excel (TM). 
+
+Additionally it offers default conversions for date time and datetime.
+
+Why?
+----
+
+Microsoft Excel (TM) has a well known syntax for date formatting, that more 
+memorable than the syntax chosen in the time package in the go library.
 
 Usage
 -----

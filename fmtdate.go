@@ -1,3 +1,30 @@
+/*
+fmtdate provides a date formatter and parser, based on the time package using the syntax known from Microsoft Excel (TM).
+
+Additionally it offers default conversions for date time and datetime.
+
+Why?
+
+Microsoft Excel (TM) has a well known syntax for date formatting, that more
+memorable than the syntax chosen in the time package in the go library.
+
+Usage
+
+	package main
+	import (
+		"github.com/metakeule/fmtdate"
+		"fmt"
+	)
+
+	func main() {
+		date := fmtdate.Format("DD.MM.YYYY", time.Now())
+		fmt.Println(date)
+
+		var err
+		date, err = fmtdate.Parse("M/D/YY", "2/3/07")
+		fmt.Println(date, err)
+	}
+*/
 package fmtdate
 
 import (

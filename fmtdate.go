@@ -12,7 +12,7 @@ Usage
 
 	package main
 	import (
-		"github.com/metakeule/fmtdate"
+		"gopkg.in/metakeule/fmtdate.v1"
 		"fmt"
 	)
 

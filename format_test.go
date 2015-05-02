@@ -8,7 +8,7 @@ import (
 )
 
 // 2006-01-02T15:04:05Z07:00
-var date, _ = time.Parse("2006-01-02 15:04:05 MST", "2007-02-03 16:05:06 CET")
+var date, _ = time.Parse("2006-01-02 15:04:05 MST", "2007-02-03 16:05:06 UTC")
 
 func TestFormat(t *testing.T) {
 
@@ -16,9 +16,9 @@ func TestFormat(t *testing.T) {
 		format   string
 		expected string
 	}{
-		{"hh:mm:ss ZZZZ", "16:05:06 +0100"},
-		{"hh:mm:ss ZZZ", "16:05:06 CET"},
-		{"hh:mm:ss ZZ", "16:05:06 +01:00"},
+		{"hh:mm:ss ZZZZ", "16:05:06 +0000"},
+		{"hh:mm:ss ZZZ", "16:05:06 UTC"},
+		{"hh:mm:ss ZZ", "16:05:06 Z"},
 		{"D", "3"},
 		{"DD", "03"},
 		{"DDD", "Sat"},

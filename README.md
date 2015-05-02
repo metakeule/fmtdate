@@ -1,7 +1,9 @@
 fmtdate
 =======
 
-[![Build Status](https://secure.travis-ci.org/metakeule/fmtdate.png)](http://travis-ci.org/metakeule/fmtdate)
+[![Build Status](https://secure.travis-ci.org/metakeule/fmtdate.png)](http://travis-ci.org/metakeule/fmtdate) [![Total views](https://sourcegraph.com/api/repos/github.com/metakeule/fmtdate/counters/views.png)](https://sourcegraph.com/github.com/metakeule/fmtdate)
+
+100% test coverage (that was easy :-))
 
 `fmtdate` provides a date formatter and parser using the syntax of Microsoft Excel (TM). 
 

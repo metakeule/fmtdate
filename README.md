@@ -40,9 +40,6 @@ Usage
 Placeholders
 ------------
 
-	hh   - hours
-	mm   - minutes
-	ss   - seconds
 	M    - month (1)
 	MM   - month (01)
 	MMM  - month (Jan)
@@ -53,6 +50,22 @@ Placeholders
 	DDDD - day (Monday)
 	YY   - year (06)
 	YYYY - year (2006)
+    hh   - hours (15)
+	mm   - minutes (04)
+	ss   - seconds (05)
+    
+	AM/PM hours: 'h' followed by optional 'mm' and 'ss' followed by 'pm', e.g.
+    
+    hpm        - hours (03PM)
+    h:mmpm     - hours:minutes (03:04PM)
+    h:mm:sspm  - hours:minutes:seconds (03:04:05PM)
+    
+    Time zones: a time format followed by 'ZZZZ', 'ZZZ' or 'ZZ', e.g.
+    
+    hh:mm:ss ZZZZ (16:05:06 +0100)
+    hh:mm:ss ZZZ  (16:05:06 CET)
+	hh:mm:ss ZZ   (16:05:06 +01:00)
+  
 
 Documentation
 -------------

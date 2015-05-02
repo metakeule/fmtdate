@@ -5,19 +5,24 @@ import (
 )
 
 var tests = map[string]string{
-	"D":    "3",
-	"DD":   "03",
-	"DDD":  "Sat",
-	"DDDD": "Saturday",
-	"M":    "2",
-	"MM":   "02",
-	"MMM":  "Feb",
-	"MMMM": "February",
-	"YY":   "07",
-	"YYYY": "2007",
-	"hh":   "16",
-	"mm":   "05",
-	"ss":   "06",
+	"D":           "3",
+	"DD":          "03",
+	"DDD":         "Sat",
+	"DDDD":        "Saturday",
+	"M":           "2",
+	"MM":          "02",
+	"MMM":         "Feb",
+	"MMMM":        "February",
+	"YY":          "07",
+	"YYYY":        "2007",
+	"hh":          "16",
+	"mm":          "05",
+	"ss":          "06",
+	"hpm":         "03PM",
+	"h:mm:sspm":   "03:05:06PM",
+	"ZZZZ":        "-0700",
+	"ZZZ":         "MST",
+	"hh:mm:ss ZZ": "16:05:06 +01:00",
 }
 
 func TestParse(t *testing.T) {

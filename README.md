@@ -37,6 +37,33 @@ Usage
 
 ```
 
+For json
+
+```go
+
+    package main
+
+    import (
+        "github.com/metakeule/fmtdate"
+        "fmt"
+        "encoding/json"
+    )
+
+    type Person struct {
+        Name string
+        BirthDay fmtdate.TimeDate
+    }
+
+    func main() {
+        bday, err := fmtdate.NewTimeDate("YYYY-MM-DD", "2000-12-04")
+        // do error handling
+        paul := &Person{"Paul", bday}
+
+        data, err := json.Marshall(paul)
+        // do error handling
+    }
+```
+
 Placeholders
 ------------
 

@@ -74,35 +74,41 @@ func replace(in string) (out string) {
 
 // Format formats a date based on Microsoft Excel (TM) conventions
 func Format(format string, date time.Time) string {
+	if format == "" {
+		format = DefaultDateTimeFormat
+	}
 	return date.Format(replace(format))
 }
 
 // Parse parses a value to a date based on Microsoft Excel (TM) formats
 func Parse(format string, value string) (time.Time, error) {
+	if format == "" {
+		format = DefaultDateTimeFormat
+	}
 	return time.Parse(replace(format), value)
 }
 
 type p struct{ find, subst string }
 
 var Placeholder = []p{
-	p{"hh", "15"},
-	p{"h", "03"},
-	p{"mm", "04"},
-	p{"ss", "05"},
-	p{"MMMM", "January"},
-	p{"MMM", "Jan"},
-	p{"MM", "01"},
-	p{"M", "1"},
-	p{"pm", "PM"},
-	p{"ZZZZ", "-0700"},
-	p{"ZZZ", "MST"},
-	p{"ZZ", "Z07:00"},
-	p{"YYYY", "2006"},
-	p{"YY", "06"},
-	p{"DDDD", "Monday"},
-	p{"DDD", "Mon"},
-	p{"DD", "02"},
-	p{"D", "2"},
+	{"hh", "15"},
+	{"h", "03"},
+	{"mm", "04"},
+	{"ss", "05"},
+	{"MMMM", "January"},
+	{"MMM", "Jan"},
+	{"MM", "01"},
+	{"M", "1"},
+	{"pm", "PM"},
+	{"ZZZZ", "-0700"},
+	{"ZZZ", "MST"},
+	{"ZZ", "Z07:00"},
+	{"YYYY", "2006"},
+	{"YY", "06"},
+	{"DDDD", "Monday"},
+	{"DDD", "Mon"},
+	{"DD", "02"},
+	{"D", "2"},
 }
 
 var (

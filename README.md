@@ -59,7 +59,7 @@ For json
         // do error handling
         paul := &Person{"Paul", bday}
 
-        data, err := json.Marshall(paul)
+        data, err := json.Marshal(paul)
         // do error handling
     }
 ```

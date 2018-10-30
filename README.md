@@ -1,8 +1,6 @@
 fmtdate
 =======
 
-[![Build Status](https://secure.travis-ci.org/metakeule/fmtdate.png)](http://travis-ci.org/metakeule/fmtdate) [![Total views](https://sourcegraph.com/api/repos/github.com/metakeule/fmtdate/counters/views.png)](https://sourcegraph.com/github.com/metakeule/fmtdate)
-
 100% test coverage (that was easy :-))
 
 `fmtdate` provides a date formatter and parser using the syntax of Microsoft Excel (TM). 
@@ -22,7 +20,7 @@ Usage
 
 	package main
 	import (
-		"github.com/metakeule/fmtdate"
+		"gitlab.com/metakeule/fmtdate"
 		"fmt"
 	)
 
@@ -44,7 +42,7 @@ For json
     package main
 
     import (
-        "github.com/metakeule/fmtdate"
+        "gitlab.com/metakeule/fmtdate"
         "fmt"
         "encoding/json"
     )
@@ -97,4 +95,4 @@ Placeholders
 Documentation
 -------------
 
-see http://godoc.org/github.com/metakeule/fmtdate
+see http://godoc.org/gitlab.com/metakeule/fmtdate

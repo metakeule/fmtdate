@@ -146,3 +146,8 @@ func ParseTime(value string) (time.Time, error) {
 func ParseDateTime(value string) (time.Time, error) {
 	return Parse(DefaultDateTimeFormat, value)
 }
+
+// Translate translate memorable format to go library's syntax
+func Translate(fmt string) string {
+	return replace(fmt)
+}

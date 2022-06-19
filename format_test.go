@@ -65,3 +65,13 @@ func TestDefaults(t *testing.T) {
 	tester(FormatTime, ParseTime)
 	tester(FormatDateTime, ParseDateTime)
 }
+
+func TestTranslate(t *testing.T) {
+
+	goformat := Translate("MM.YYYY.DD hh:mm")
+	expected := "01.2006.02 15:04"
+
+	if goformat != expected {
+		t.Errorf("format not correctly translated, got: %#v, expected: %#v", goformat, expected)
+	}
+}

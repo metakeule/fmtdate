@@ -16,6 +16,15 @@ func mustTimeDate(format, date string) TimeDate {
 	return td
 }
 
+func TestMashalError(t *testing.T) {
+
+	td, err := NewTimeDate("hh:mm:ss ZZZZ", "16:05,06 +0070")
+
+	if err == nil {
+		t.Errorf("expected error while parsing the date, but got: %s", td.String())
+	}
+}
+
 func TestMashal(t *testing.T) {
 
 	tests := []struct {

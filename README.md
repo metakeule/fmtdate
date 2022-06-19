@@ -1,6 +1,8 @@
 fmtdate
 =======
 
+**Note: If you are reading this on Github, please note that the repo has moved to Gitlab (gitlab.com/metakeule/fmtdate) and this is only a mirror.**
+
 100% test coverage (that was easy :-))
 
 `fmtdate` provides a date formatter and parser using the syntax of Microsoft Excel (TM). 
@@ -95,4 +97,4 @@ Placeholders
 Documentation
 -------------
 
-see http://godoc.org/gitlab.com/metakeule/fmtdate
+see https://pkg.go.dev/gitlab.com/metakeule/fmtdate
